@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Botões</title>
+
+    <style>
+        .mudarCorComum{
+            background-color: rgb(14, 240, 240);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Tipos de Botões</h1>
+    <label for="botao-comum">Botão Comum:</label>
+    <button id="botao-comum">aperte para mudar a cor</button> <br><br>
+
+    <!-- Botão Comum -->
+    <label for="tipo-botao">Tipo botão:</label>
+    <button type="button" id="tipo-botao">Aperte</button><br><br>
+
+    <!-- Botão desabilitado/indisponível -->
+    <label for="desabilitado">Desabilitado: </label>
+    <button disabled="disabled" id="desabilitado">Botão Indisponível</button><br><br>
+
+    <!-- Botão para limpar dados digitados em input -->
+    <form>
+        <label for="resetar">Resetar:</label>
+        <button type="reset" id="resetar">Resetar</button>
+        <input type="text" name="nome" id="nome-pessoa">
+    </form><br>
+
+    <!-- Botão para enviar dados digitados num input -->
+    <form method="get">
+        <label for="enviar">Enviar informações para o servidor:</label>
+        <button type="submit" id="enviar">Enviar Informações</button>
+        <input type="text" name="meuNome" id="nome">
+    </form>
+    
+    <script>
+        // Evento de clique para o botão comum:
+            var botaoComum = document.getElementById("botao-comum");
+            botaoComum.addEventListener("click", function(){
+                botaoComum.classList.toggle("mudarCorComum");
+            });
+    </script>
+</body>
+</html>
