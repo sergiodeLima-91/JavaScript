@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface EventTarget</title>
+</head>
+<body>
+
+    <button type="button" id="button">Passe o Mouse</button>
+
+    <script>
+        var button = document.getElementById("button");
+        
+        // Registro de um Ouvinte de Eventos (EventListener):
+            button.addEventListener("mouseover", mudarCor); // Não passamos parâmetros porque eles são passados automaticamente como um
+            // objeto do mesmo tipo do evento. Logo, será passado como parâmetro da função mudaCor um objeto do tipo mouseEvent.
+
+            function mudarCor(parametro) {
+                // Atributo "target" refere-se ao proprio elemento que disparou a função ("button", no caso)
+                parametro.target.style.color = "blue";
+            }
+                
+   
+    
+
+    </script>
+</body>
+</html>
