@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Element</title>
+</head>
+<body>
+
+    <p id="par-1">Mudando a cor do texto através da interface Element pela propriedade style.color</p>
+    
+    <p id="par-2">Colocando uma borda neste texto</p>
+    
+    <script>
+        var paragrafo1 = document.getElementById("par-1");
+        paragrafo1.style.color = "brown";
+        
+        // Estilizando o segundo parágrafo somente com base na interface Element:
+        var paragrafo2 = document.getElementById("par-2");
+        paragrafo2.style.border = "1px solid red";
+        paragrafo2.style.textAlign = "center";
+        paragrafo2.style.width = "100px";
+        paragrafo2.style.margin = "auto";
+    </script>
+</body>
+</html>
