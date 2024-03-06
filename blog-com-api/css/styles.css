@@ -1,0 +1,32 @@
+* {
+    font-family: Helvetica;
+}
+
+body {
+    padding: 15px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Estilizar tags de links e botões: */
+a, input[type="submit"] {
+    background-color: #007BFF;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    /* Para retirar underline dos links: */
+    text-decoration: none;
+    opacity: .7;
+    font-size: 1em;
+    border: none;
+    cursor: pointer;
+}
+
+/* Trabalhando com o HOVER tanto dos links quanto dos botões (sim, a sintaxe é esquisita assim mesmo): */
+
+a:hover,
+input[type="submit"] {
+    opacity: 1;
+}
