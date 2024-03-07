@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testes</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <h1>💲 Pega Cotação 💲</h1>    
+    <div id="main-container">
+        <fieldset>
+            <label for="usd">Dólar</label>
+            <input type="radio" name="moeda" id="USD-BRL" class="radio">
+
+            <label for="eur">Euro</label>
+            <input type="radio" name="moeda" id="EUR-BRL" class="radio">
+            
+            <label for="btc">Bitcoin</label>
+            <input type="radio" name="moeda" id="BTC-BRL" class="radio">
+
+            <button type="submit" method="post" id="button">Ver cotação</button>
+
+            <p id="resultado"></p>
+        </fieldset>
+    </div> 
+    
+    <script src="./js/scripts.js" defer></script>
+</body>
+</html>
