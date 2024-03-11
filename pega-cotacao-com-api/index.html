@@ -11,20 +11,22 @@
 <body>
     <h1>💲 Pega Cotação 💲</h1>    
     <div id="main-container">
-        <fieldset>
-            <label for="usd">Dólar</label>
-            <input type="radio" name="moeda" id="USD-BRL" class="radio">
+        <form>
+            <select name="selecao-moeda" id="moedas" required="required">
+                <option value="">Escolha uma moeda</option>
+                <option value="usd">Dólar</option>
+                <option value="eur">Euro</option>
+                <option value="btc">Bitcoin</option>
+             </select>
 
-            <label for="eur">Euro</label>
-            <input type="radio" name="moeda" id="EUR-BRL" class="radio">
-            
-            <label for="btc">Bitcoin</label>
-            <input type="radio" name="moeda" id="BTC-BRL" class="radio">
+             <button type="submit" id="button">Ver Cotação</button>
+        </form>
+         
+        
 
-            <button type="submit" method="post" id="button">Ver cotação</button>
 
             <p id="resultado"></p>
-        </fieldset>
+        
     </div> 
     
     <script src="./js/scripts.js" defer></script>
