@@ -11,7 +11,7 @@
     margin: auto;
     flex-direction: column;
     text-align: center;
-    margin-top: 20px;
+    margin-top: 75px;
     border-radius: 10px;
     background-color: rgb(255, 187, 0);
     width: 320px;
@@ -45,6 +45,7 @@ label {
 input {
     height: 30px;
     margin-top: 50px;
+    border: none;
     border-radius: 5px;
 }
 
@@ -55,4 +56,9 @@ button {
     height: 25px;   
     background-color: black;
     border-radius: 5px; 
+}
+
+p {
+    color:  white;
+    margin-left: 15px;
 }
