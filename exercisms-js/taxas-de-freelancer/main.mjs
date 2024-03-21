@@ -10,31 +10,6 @@
 // 3 - CALCULE A TAXA DE DESCONTOS PARA GRANDES PROJETOS:
 // Freqüentemente, os clientes do freelancer os contratam para projetos que duram vários meses. Nestes casos, o freelancer decide oferecer um desconto para cada mês completo, e os dias restantes são cobrados à diária. Cada mês tem 22 dias faturáveis. Ajude-os a estimar o custo desses projetos, considerando uma taxa horária, o número de dias que o projeto dura e uma taxa de desconto mensal. O desconto é sempre passado como um número, onde 42% passa a ser 0.42. O resultado deve ser arredondado para o número inteiro mais próximo.
 
-
-// // Taxa de Descontos para grandes projetos:
-// export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
-//     // Calculo para Determinar quantidade de meses de 22 dias:
-//     var monthNum = Math.round(numDays / 22);
-//     // Determinando quanto será o valor pago no mês (sem desconto)
-//     var monthValue = (ratePerHour * 8) * 22;
-//     // Determinando a porcentagem de desconto com base no montante:
-//     var monthValueDiscount = (monthValue * (discount * 100)) / 100;
-//     // Aplicando o desconto determinado no montante:
-//     var valueMonthly = (monthValue - monthValueDiscount) * monthNum ;
-    
-//     var restDays = numDays % 22;
-//     var daysRemainigValue = (ratePerHour * 8) * restDays;
-    
-//     return `monthNum: ${monthNum} - monthValue: ${monthValue} - monthValueDiscount: ${monthValueDiscount} - restDays: ${restDays} - daysRemainingValue: ${daysRemainigValue} - total: ${valueMonthly + daysRemainigValue}`; 
-// }
-
-// // Chamamento das funções:
-// dayRate();
-// daysInBudget();
-// priceWithMonthlyDiscount(16, 130, 0.15);
-
-//==============================================================
-
 // Valor Diário com Base no Valor Por Hora:
 export function dayRate(ratePerHour) {
     return ratePerHour * 8;
