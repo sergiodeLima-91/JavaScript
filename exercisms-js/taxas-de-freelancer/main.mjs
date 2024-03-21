@@ -67,4 +67,4 @@ export function priceWithMonthlyDiscount(ratePerHour, numDays, discount) {
 // Chamamento das funções:
 dayRate();
 daysInBudget();
-console.log(priceWithMonthlyDiscount(29.654321, 155, 0.2547));
+priceWithMonthlyDiscount(29.654321, 155, 0.2547);

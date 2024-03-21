@@ -6,5 +6,5 @@ var resultado = document.querySelector("#results")
 var botao = document.querySelector("#botao");
 
 botao.addEventListener("click", function() {
-    alert((altura.value ** 2) / peso.value)
+    resultado.innerHTML = `IMC: ${peso / (altura ** 2)}`
 })
