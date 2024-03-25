@@ -2,23 +2,26 @@
 export function frontDoorResponse(line) {
     const poetry = line;
     // Catching the first letter of each word :
-    const firstLetters = poetry.map(function(item, index) {
+    const firstLetters = poetry.map(function(item) {
         return item[0];
     });
-
     // Putting letters togheter to form the password:
-    var lettersTogheter = '';
-    firstLetters.forEach(function(item){
-        return lettersTogheter = item;
-    });
-    // Captalize the passowrd:
-    // const captalizedPassword = firstLetters.charAt(0).toUpperCase() + firstLetters.slice(1).toLowerCase();
+    var lettersTogheter = firstLetters.join('');
 
     return lettersTogheter;
 };
 
+   
+export function frontDoorPassword() {
+   // Captalize the passowrd:
+   const returnfrontDoorResponse = frontDoorResponse(SUMMER)
+   const captalizedPassword = returnfrontDoorResponse.charAt(0).toUpperCase() + returnfrontDoorResponse.slice(1).toLowerCase();
+
+   return captalizedPassword;
+}   
+
 var SUMMER = [
-    'Sunshine warming my toes,',
+    'Sunshine warming my toes',
     'Underwater fun with my friends.',
     'Making homemade ice cream on the porch,',
     'Many long nights catching fireflies.',
@@ -27,3 +30,4 @@ var SUMMER = [
 ];
 
 console.log(frontDoorResponse(SUMMER));
+console.log(frontDoorPassword());
