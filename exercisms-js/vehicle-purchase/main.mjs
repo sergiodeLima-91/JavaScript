@@ -6,22 +6,20 @@ export function needsLicense(kind) {
     }
 };
 
-const alpha = [
-    a = 'A',
-    b = 'B',
-    c = 'C'.
-]
-
 export function chooseVehicle(option1, option2) {
-    if(option1[0] > option1[0]) {
-        return  `${option1} is clearly the better choice.`
-    } else{
-        return `${option2} is clearly the better choice.`
-    }
-
+    if (option1 < option2) {
+        return `${option1} is clearly the better choice.`;
+    } else {
+        return `${option2} is clearly the better choice.`;
+    } 
 };
 
-
-console.log(chooseVehicle('Wuling Hongguang', 'Toyota Corolla'));
-
-
+export function calculateResellPrice(originalPrice, age) {
+    if (age >= 3 && age <= 10) {
+        return (originalPrice * 70) / 100;
+    } else if (age < 3){
+        return (originalPrice * 80) / 100; 
+    } else {
+        return (originalPrice * 50) / 100;
+    }
+  };
