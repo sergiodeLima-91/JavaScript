@@ -20,11 +20,15 @@ export function birdsInWeek(birdsPerDay, week) {
 };
 
 export function fixBirdCountLog(birdsPerDay) {
-    let birdCountFix =  birdsPerDay[0] + 1;
-    birdsPerDay[0] = birdCountFix;
+
+    for (let counter = 0; counter < birdsPerDay.length; counter++) {
+        if  (counter %2 == 0) {
+            birdsPerDay[counter] += 1;
+        } else if (counter == 0) {
+            birdsPerDay[counter] += 1; 
+        }    
+    
+    }; 
 
     return birdsPerDay;
-  }
-
-console.log(fixBirdCountLog([2, 5, 0, 7, 4, 1]));
-
+};
