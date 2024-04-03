@@ -10,31 +10,21 @@ export function totalBirdCount(birdsPerDay) {
 
 export function birdsInWeek(birdsPerDay, week) {
     let totalBirdsInWeek = 0;
-    if (week == 1) {
-        for (let counter = 0; counter < 7; counter++) {
-            totalBirdsInWeek += birdsPerDay[counter];
-        }
-    } else if (week == 2) {
-        for (let counter = 8; counter < 15; counter++) {
-            totalBirdsInWeek += birdsPerDay[counter];
-        }
-    } else if (week == 3) {
-        for (let counter = 16; counter < 22; counter++) {
-            totalBirdsInWeek += birdsPerDay[counter];
-        }
-    } else if (week == 4) {
-        for (let counter = 23; counter < 29; counter++) {
-            totalBirdsInWeek += birdsPerDay[counter];
-        }
-    } else if (week > 4) {
-        for (let counter = 0; counter < birdsPerDay.length; counter++) {
-            totalBirdsInWeek += birdsPerDay[counter];
-            
-        }
-    }
+
+    for (let counter = (week * 7) - 7; counter < week * 7; counter++) {
+        totalBirdsInWeek += birdsPerDay[counter];
+    };    
 
     return totalBirdsInWeek;
 
 };
 
-console.log(birdsInWeek([2, 0, 1, 4, 1, 3, 0], 21));
+export function fixBirdCountLog(birdsPerDay) {
+    let birdCountFix =  birdsPerDay[0] + 1;
+    birdsPerDay[0] = birdCountFix;
+
+    return birdsPerDay;
+  }
+
+console.log(fixBirdCountLog([2, 5, 0, 7, 4, 1]));
+
