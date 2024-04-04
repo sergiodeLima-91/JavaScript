@@ -26,9 +26,6 @@ export function timeToMixJuice(name) {
   };
 
   export function limesToCut(wedgesNeeded, limes) {
-    // small lime: 6
-    // medium lime: 8
-    // large lime: 10
 
     // Corresponding numbers and names:
     let limesNumbers = [];
@@ -43,19 +40,75 @@ export function timeToMixJuice(name) {
             
         };
 
+        // Add all numbers on list:
         let sumLimesNumbers = limesNumbers.reduce((acumulador, currentValue) => acumulador + currentValue, 0);
 
-        console.log(`Limes Numbers: ${limesNumbers}`);
+        // In case the limes slices is bigger between sum of "sumLimesNumbers":
+        // "Caso o número fatias de limão seja maior do que a soma de 'sumLimesNumbers'"
+        if (wedgesNeeded > sumLimesNumbers) {
+            return limesNumbers.length;
+        };
 
-        for (let index = 0; index < limes.length; index++) {
-            if(wedgesNeeded == 0) {
-                return 0
-            } else if (wedgesNeeded <= limesNumbers[index]) {
-                return index;
-            } else if (wedgesNeeded > sumLimesNumbers) {
-                return limesNumbers.length;
-            }
+        // In case the number of limes slices is zero:
+        // "Para caso o  número de fatias de limão seja zero"
+        if (wedgesNeeded == 0) {
+            return 0;
+        // If the number of available lemons is not provided:
+        // "Caso o número de limões disponíveis não seja passado."
+        } 
+        
+        if (limes = undefined) {
+            return 0;
         }
+
+        let counter2 = 0;
+        while (wedgesNeeded > 0) {
+            wedgesNeeded -= limesNumbers[counter2];
+            counter2 += 1;
+        }
+
+        return counter2;
+
 };
 
-  console.log(limesToCut(10, ['small','large','large']));
+export function remainingOrders(timeLeft, orders) {
+    let timePreparationJuices = [];
+    switch (orders) {
+        case 'Energizer':
+            timePreparationJuices.push(1.5);
+            break;
+        
+        case 'Green Garden':
+            timePreparationJuices.push(1.5);
+            break;
+
+        case 'Pure Strawberry Joy':
+            timePreparationJuices.push(0.5);         
+            break;
+
+        case 'Tropical Island':
+            timePreparationJuices.push(3);
+            break;
+
+        case 'All or Nothing':
+            timePreparationJuices.push(5);
+            break
+        
+            default:
+                timePreparationJuices.push(2.5)
+    }
+
+    // TO DO: Sum up the preparation times!
+    let timeOfTotalPreparationTime = 0;
+    for (let counter = 0; counter < orders.length; counter++) {
+        timeOfTotalPreparationTime += timePreparationJuices[counter];
+    }
+    
+
+    while (timeLeft > timeOfTotalPrepair) {
+        
+    }
+  }
+
+  console.log(limesToCut(5, ['Energizer', 'All or Nothing', 'Green Garden']));
+
