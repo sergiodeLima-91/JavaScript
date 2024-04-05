@@ -72,43 +72,76 @@ export function timeToMixJuice(name) {
 };
 
 export function remainingOrders(timeLeft, orders) {
-    let timePreparationJuices = [];
-    switch (orders) {
-        case 'Energizer':
-            timePreparationJuices.push(1.5);
-            break;
+
+    // TO DO List:
+    // 1. Putting the juice names in a separate list
+    // 2. Creating a list with the corresponding preparation time for each order
+    // 3. Subtracting the preparation time for each juice from the remaining working time
+    // 4. Returning the juices that can only be prepared in the next shift
+
+    // 1. Putting the juice names in a separate list
+    let juiceNames = orders;
+
+    // 2. Creating a list with the corresponding preparation time for each order
+    let timePreparation = [];
+    let counter = 0;
+
+      while (counter < orders.length) {
+        switch (orders[counter]) {
+            case 'Energizer':
+                timePreparation.push(1.5)
+                break;
+            
+            case 'Green Garden':
+                timePreparation.push(1.5)
+                break;
         
-        case 'Green Garden':
-            timePreparationJuices.push(1.5);
-            break;
+            case 'Pure Strawberry Joy':
+                timePreparation.push(0.5);            
+                break;
 
-        case 'Pure Strawberry Joy':
-            timePreparationJuices.push(0.5);         
-            break;
-
-        case 'Tropical Island':
-            timePreparationJuices.push(3);
-            break;
-
-        case 'All or Nothing':
-            timePreparationJuices.push(5);
-            break
-        
+            case 'Tropical Island':
+                timePreparation.push(3);            
+                break;
+            
+            case 'All or Nothing':
+                timePreparation.push(5);            
+                break;
+            
             default:
-                timePreparationJuices.push(2.5)
-    }
-
-    // TO DO: Sum up the preparation times!
-    let timeOfTotalPreparationTime = 0;
-    for (let counter = 0; counter < orders.length; counter++) {
-        timeOfTotalPreparationTime += timePreparationJuices[counter];
-    }
+                timePreparation.push(2.5);
+                break;
+        }
     
-
-    while (timeLeft > timeOfTotalPrepair) {
-        
+        counter += 1;
     }
-  }
+    // 3. Subtracting the preparation time for each juice from the remaining working time
+    let sumTimePreparation = timePreparation.reduce((acumulador, currentValue) => acumulador + currentValue, 0);
 
-  console.log(limesToCut(5, ['Energizer', 'All or Nothing', 'Green Garden']));
+    let counter2 = 0;
+    while (timeLeft > 0) {
+        timeLeft -= timePreparation[counter2];
+        juiceNames.shift();
+
+        // 4. Returning the juices that can only be prepared in the next shift
+        if (timeLeft <= 0) {
+            return juiceNames;
+        } else if (juiceNames == 0) {
+            return orders;
+        } 
+
+        counter2 += 1;
+
+    }     
+
+}
+
+  console.log(remainingOrders(12, [
+    'Energizer',
+    'Green Garden',
+    'Ruby Glow',
+    'Pure Strawberry Joy',
+    'Tropical Island',
+    'Limetime',
+  ]));
 
