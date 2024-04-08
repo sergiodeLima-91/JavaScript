@@ -7,23 +7,35 @@ export function createScoreBoard() {
 };
 
 export function addPlayer(scoreBoard, player, score) {
-    scoreBoard.player = player;
-    scoreBoard.score = score
+    scoreBoard[player] = score;
 
-    let allData = [];
+    return scoreBoard;
 
-    for (const key in scoreBoard) {
-        allData.push = key;
-        allData.push = scoreBoard[key]
-            
-        }
+}
 
-        return allData;
-    }
+export function removePlayer(scoreBoard, player) {
+     if(scoreBoard.hasOwnProperty(player)) {
+        delete scoreBoard[`${player}`];
+     }
 
-const scoreBoard = {
-    'Amil Pastorius': 99373,
-    'Min-seo Shin': 0,
+     return scoreBoard;
+}
+
+export function updateScore(scoreBoard, player, points) {
+    scoreBoard[`${player}`] += points;
+    
+    return scoreBoard;
 };
 
-console.log(addPlayer(scoreBoard, 'Jesse Johnson', 1337));
+export function applyMondayBonus(scoreBoard) {
+    for (const key in scoreBoard) {
+        scoreBoard[`${key}`] += 100;       
+        }
+
+        return scoreBoard;
+};
+
+export function normalizeScore(params) {
+    let currentScore = params.score;
+    return params.normalizeFunction(currentScore);
+};
