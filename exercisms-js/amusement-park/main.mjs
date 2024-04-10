@@ -15,19 +15,19 @@ export function revokeTicket(visitor) {
 };
 
 export function ticketStatus(tickets, ticketId) {
-    let keys = Object.keys(tickets);
-    let values = Object.values(tickets);
-
-    if (tickets.hasOwnProperty(ticketId) == false) {
-        return 'unknown ticked id'
-    } if (tickets[values[1] == values[1]]) {
-        return `sold to ${values[1]}`;
+    for (const key in tickets) {
+        if (tickets.hasOwnProperty(ticketId) == false) {
+            return 'unknown ticket id';
+        } else if (tickets[ticketId] === null) {
+            return 'not sold';
+        } else {
+            return `sold to ${tickets[ticketId]}`
+        }
     }
-}
+};
 
 const tickets = {
-    '0H2AZ123': null,
-    '23LA9T41': 'Verena Nardi',
-  };
+    'V42NWRMQ': null,
+};
 
-console.log(ticketStatus(tickets, '23LA9T41'));
+console.log(ticketStatus(tickets, 'V42NWRMQ'));
