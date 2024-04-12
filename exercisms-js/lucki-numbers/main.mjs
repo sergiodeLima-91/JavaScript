@@ -1,3 +1,4 @@
+// Task 1:
 export function twoSum(array1, array2) {
     // 1 - Eliminating commas:
     array1 = array1.join('');
@@ -11,7 +12,7 @@ export function twoSum(array1, array2) {
     return sum;
 
 };
-
+// Task 2:
 export function luckyNumber(value) { 
     //1 - Converting to string:
     let valueString = String(value);
@@ -21,15 +22,17 @@ export function luckyNumber(value) {
     //3 - Comparing the numbers :
     return valueString === valueReverse;
 };
-
+// Task 3:
 export function errorMessage(input) {
-    if (input == undefined || input == null) {
+    let inputConv = Number(input);
+
+    if (Boolean(input) ==  false) {
         return 'Required field';
-    } else if (input == 0) {
+    } else if (Boolean(inputConv) == false){
         return 'Must be a number besides 0';
     } else {
         return '';
     }
-  }
+};
 
-  console.log(errorMessage(''));
+  console.log(errorMessage('0'));
