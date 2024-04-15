@@ -1,4 +1,4 @@
-// Task 1 - Determine whether lasagna is done:
+// Task 1
 export function cookingStatus(timer=undefined) {
     if (timer > 0) {
         return 'Not done, please wait.'
@@ -9,13 +9,13 @@ export function cookingStatus(timer=undefined) {
     }
 };
 
-// Task 2 - Estimate the Preparation Time:
+// Task 2
 export function preparationTime(layers, timePreparate=2) {
     let layersLength = layers.length;
     return layersLength * timePreparate;
 };
 
-// Task 3 - Compute the amounts of noodles and sauce needed:
+// Task 3
 export function quantities(layers) {
     // For Each noodle layer > 50 gm of noodles
     // For Each sauce layer > 0.2 liters of sauce
@@ -33,12 +33,56 @@ export function quantities(layers) {
 
     return ingredients;
 };
+// Task 4
+export function addSecretIngredient(friendList, myList) {
+    let SpecialIngredient = friendList[friendList.length -1];
+    myList.push(SpecialIngredient);
+
+    return undefined;
+};
+
+export function scaleRecipe(recipe, peoplesQuantity) {
+    let recipeValues = Object.values(recipe);
+    const recipeKeys = Object.keys(recipe);
+    let recipeNoModification = recipeValues.slice();
+    let counter = 0;
+    
+    for (let index = 0; index < recipeValues.length; index++) {
+        if (recipeValues[index] %peoplesQuantity == 0) {
+            counter += 1;
+        };
+    }
+
+    // Normalize the recipe object for obtain the unity value per people:
+    for (let index = 0; index < recipeValues.length; index++) {
+        recipeValues[index] = recipeValues[index] / 2;
+    }    
+
+    // Multiply for people quantity and put on the recipe:
+    for (let index = 0; index < recipeKeys.length; index++) {
+        recipe[recipeKeys[index]] = recipeValues[index] * peoplesQuantity;
+    }
+
+    recipeValues = Object.values(recipe);
+    
+    
+
+    if (counter == recipeValues.length) {
+        return recipe;
+    }
+
+
+    return recipe;
+};
 
 // Call functions:
-cookingStatus();
 
-const layers = ['sauce', 'noodles', 'sauce', 'meat', 'mozzarella', 'noodles'];
+const recipe = {
+    sauce: 1,
+    noodles: 250,
+    meat: 150,
+    tomatoes: 3,
+    onion: 2,
+  };
 
-preparationTime(layers, 3);
-
-quantities(layers);
+console.log(scaleRecipe(recipe, 4));
