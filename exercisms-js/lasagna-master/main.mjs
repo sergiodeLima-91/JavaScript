@@ -44,45 +44,26 @@ export function addSecretIngredient(friendList, myList) {
 export function scaleRecipe(recipe, peoplesQuantity) {
     let recipeValues = Object.values(recipe);
     const recipeKeys = Object.keys(recipe);
-    let recipeNoModification = recipeValues.slice();
+    let newRecipeValues = recipeValues.slice();
     let counter = 0;
-    
+
+    // Normalization for catch the VALUE PER PEOPLE:
     for (let index = 0; index < recipeValues.length; index++) {
-        if (recipeValues[index] %peoplesQuantity == 0) {
+        recipeValues[index] = recipeValues[index] / 2
+    };
+    // If the quantity os ingredients is sufficient for the number of costumers:
+    for (let index = 0; index < recipeValues.length; index++) {
+        if (newRecipeValues[index] == (recipeValues[index] / 2) * peoplesQuantity) {
             counter += 1;
-        };
-    }
-
-    // Normalize the recipe object for obtain the unity value per people:
-    for (let index = 0; index < recipeValues.length; index++) {
-        recipeValues[index] = recipeValues[index] / 2;
-    }    
-
+        } if (counter == recipeValues.length) {
+            return recipe;
+        }
+    };
     // Multiply for people quantity and put on the recipe:
     for (let index = 0; index < recipeKeys.length; index++) {
         recipe[recipeKeys[index]] = recipeValues[index] * peoplesQuantity;
-    }
-
-    recipeValues = Object.values(recipe);
-    
-    
-
-    if (counter == recipeValues.length) {
-        return recipe;
-    }
+    }; 
 
 
     return recipe;
 };
-
-// Call functions:
-
-const recipe = {
-    sauce: 1,
-    noodles: 250,
-    meat: 150,
-    tomatoes: 3,
-    onion: 2,
-  };
-
-console.log(scaleRecipe(recipe, 4));
