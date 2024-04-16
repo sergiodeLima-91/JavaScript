@@ -11,9 +11,16 @@ export function scale2d(sx, sy) {
     }
 };
 // Task 3:
+// Need is analyse for me:
 export function composeTransform(f, g) {
-    const firstFunction = f;
-    const secondFunction = g;
-
-    return [firstFunction, secondFunction];
+    return function composed(x, y) {
+      return g(...f(x, y))
+    }
 };
+
+// Task 4:
+export function memorizeTransform(f) {
+    return function memorize(g) {
+        return g
+    }
+}
