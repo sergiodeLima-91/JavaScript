@@ -19,8 +19,16 @@ export function composeTransform(f, g) {
 };
 
 // Task 4:
-export function memorizeTransform(f) {
-    return function memorize(g) {
-        return g
+// Need is analyse for me:
+export function memoizeTransform(f) {
+    let previousX, previousY, previousResult
+    
+    return function memoised(x, y) {
+      if (previousX === x && previousY === y) {
+        return previousResult
+      }
+      previousX = x
+      previousY = y
+      return previousResult = f(x, y)
     }
-}
+  }
