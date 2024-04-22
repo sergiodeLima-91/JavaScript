@@ -17,7 +17,5 @@ export function orderFromGrocer(query, onSuccessCallback, onErrorCallback) {
 
 // Task 4:
 export function postOrder(variety, quantity) {
-    order({quantity: quantity, variety: variety});
-    onSuccess()
-    onError();
+    orderFromGrocer({variety,quantity}, onSuccess, onError);
 };
