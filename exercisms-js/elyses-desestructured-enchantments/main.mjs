@@ -27,12 +27,19 @@ export function discardTopCard(deck) {
 };
 
 export function insertFaceCards(deck) {
-    const cards = deck;
-    let [first, second, third, four,...everythingElse] = deck
-    second = 'jack', third = 'queen', four = 'king';
-    return [first, second, third,four, everythingElse];
+    if (deck[0] == undefined) {
+        return [undefined,'jack', 'queen', 'king'];
+    } else{
+        deck.splice(1,0,'jack', 'queen', 'king');
+        return deck;
+    };    
 };
 
 
-const deck = [5, 4, 7, 10];
+const deck = [
+    undefined,
+    'jack',
+    'queen',
+    'king',
+  ];
 console.log(insertFaceCards(deck));
