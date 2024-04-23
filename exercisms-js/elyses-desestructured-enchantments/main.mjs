@@ -25,7 +25,7 @@ export function discardTopCard(deck) {
     let [first,...everythingElse] = cards;
     return [first,everythingElse];
 };
-
+// Task 5:
 export function insertFaceCards(deck) {
     if (deck[0] == undefined) {
         return [undefined,'jack', 'queen', 'king'];
