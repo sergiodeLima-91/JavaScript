@@ -1,7 +1,9 @@
+import styles from './Frases.module.css'
+
 function Frase() {
     return (
-        <div>
-            <p>Frase que fica encima!</p>
+        <div className={styles.frasesContainer}>
+            <p className={styles.frasesContent}>Frase que fica encima!</p>
         </div>
     )
 };

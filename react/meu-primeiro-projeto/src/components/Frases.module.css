@@ -1,0 +1,18 @@
+/* Não é possível criar classes usando traços aqui. Use Camel Case ou underline.(-) */
+
+.frasesContainer {
+    background-color: #333;
+    border: 1px solid #111;
+}
+
+.frasesContent {
+    color: #fff;
+    background-color: #333;
+    margin: 0;
+}
+
+.fotoMargin {
+    margin-top: 10px;
+}
+
+
