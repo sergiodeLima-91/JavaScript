@@ -8,10 +8,10 @@ function List() {
         <> 
             <h1>Minha Lista de Veículos</h1>
             <ul>
-                <Item modelo="Chevrolet Celta"/>
-                <Item modelo="Nissan Kics" />
-                <Item modelo="Nissan 350 LT" />
-                <Item modelo="Nissan Skyline" />
+                <Item marca="Ferrari" ano_lancamento={1985}/>
+                <Item marca="Fiat" ano_lancamento={1964}/>
+                <Item marca="Renault" ano_lancamento={1980}/>
+                <Item marca="Wolkswagem" ano_lancamento="1952"/>
             </ul>
         </>        
     )
