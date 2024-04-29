@@ -7,6 +7,7 @@ function App() {
   // Função que será chamada quando o evento onChange for acionado
   const handleChange = (event) => {
     setInputValue(event.target.value);
+    alert('Opa, o campo')
   };
 
   return (
