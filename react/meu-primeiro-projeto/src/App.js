@@ -7,6 +7,8 @@ import List from './components/List';
 import Evento from './components/Click';
 import Form from './components/Form';
 import OnChange from './components/OnChange';
+import Condicional from './components/Condicional';
+import Contador from './components/Contador';
 
 function App() {
   return (
@@ -20,10 +22,15 @@ function App() {
         profissao="Auxiliar Administrativo"
       />
       <List />
-      <h1>Testando Eventos</h1>
+      <h1>Testando Eventos - Reutilização de Componentes</h1>
       <Evento acionador="Sérgio"/>
       <Form />
       <OnChange />
+      <h1>Testando Renderização em Tempo Real</h1>
+      <Contador />
+      <h1>Testando Renderização Condicional</h1>
+      <p>Determinado elemento é renderizado na tela caso a condição seja satisfeita.</p>
+      <Condicional />
     </div>
   );
 }

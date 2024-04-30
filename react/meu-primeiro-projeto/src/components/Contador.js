@@ -13,6 +13,7 @@ function Contador() {
 
   return (
     <div>
+      <p>Clique no botão para somar um a contagem. A renderização em tempo real é possível porque estamos aplicando uma alteração com a tag _strong_ diretamente na constante contador e o useState retorna o valor alterado.</p>
       <p>Contagem: <strong>{contador}</strong></p>
       <button onClick={incrementar}>Incrementar</button>
     </div>
