@@ -31,7 +31,7 @@ function Form() {
                     id="password"
                     name="password"
                     placeholder="Digite sua senha"
-                    onCanPlay={(e) => setPassword(e.target.value)} 
+                    onChange={(e)   => setPassword(e.target.value)} 
                     />
                 </div>
                 <div>
