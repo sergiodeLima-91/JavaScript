@@ -7,7 +7,6 @@ import List from './components/List';
 import Evento from './components/Click';
 import Form from './components/Form';
 import OnChange from './components/OnChange';
-import Contador from './components/Contador';
 
 function App() {
   return (
@@ -25,7 +24,6 @@ function App() {
       <Evento acionador="Sérgio"/>
       <Form />
       <OnChange />
-      <Contador />
     </div>
   );
 }

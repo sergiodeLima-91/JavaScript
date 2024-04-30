@@ -22,4 +22,5 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-Testes.js
+Testes.test.js
+Soma.js
