@@ -4,7 +4,8 @@ function Contador() {
   // Define o estado inicial como 0
   // Primeiro parêmetro (contador) recebe valor atual sem alteração.
   // Segundo parâmetro (setContador) recebe o valor alterado na função incrementar()
-  const [contador, setContador] = useState(0);
+  // O valor 1 presente  em "useState(1)" está sendo atribuído a "contador"
+  const [contador, setContador] = useState(1);
 
   const incrementar = () => {
     // Atualiza o estado adicionando 1 ao contador
